@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#141416"/>
+  <rect x="48" y="48" width="704" height="44" rx="8" fill="#27272a"/>
+  <rect x="48" y="120" width="180" height="400" rx="12" fill="#1f1f23"/>
+  <rect x="252" y="120" width="500" height="400" rx="12" fill="#27272a"/>
+  <rect x="276" y="148" width="120" height="80" rx="8" fill="#3f3f46"/>
+  <rect x="412" y="148" width="120" height="80" rx="8" fill="#1f1f23"/>
+  <rect x="548" y="148" width="120" height="80" rx="8" fill="#1f1f23"/>
+  <rect x="276" y="252" width="452" height="12" rx="4" fill="#3f3f46"/>
+  <rect x="276" y="280" width="400" height="12" rx="4" fill="#27272a"/>
+  <rect x="276" y="308" width="420" height="12" rx="4" fill="#27272a"/>
+  <text x="400" y="580" text-anchor="middle" fill="#52525b" font-family="system-ui,sans-serif" font-size="14">Pipeline · Nexus</text>
+</svg>

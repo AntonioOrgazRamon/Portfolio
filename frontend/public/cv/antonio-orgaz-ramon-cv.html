@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antonio Orgaz Ramón — Backend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #18181b;
+        --ink-soft: #3f3f46;
+        --muted: #71717a;
+        --line: #e4e4e7;
+        --paper: #f9f6f1;
+        --production: #166534;
+        --production-bg: #f0fdf4;
+        --demo: #52525b;
+        --demo-bg: #f4f4f5;
+        --testing: #a16207;
+        --testing-bg: #fffbeb;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+        background: #f9f6f1;
+      }
+
+      html {
+        background: var(--paper);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 10.25pt;
+        line-height: 1.5;
+        color: var(--ink);
+        background: var(--paper);
+      }
+
+      /* ─── Toolbar (pantalla) ─── */
+      .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+        background: rgba(255, 255, 255, 0.96);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .toolbar-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        max-width: 36rem;
+        text-align: center;
+      }
+
+      .toolbar-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .toolbar-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--ink);
+        font: inherit;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        padding: 0.55rem 1.15rem;
+        border-radius: 0.35rem;
+        cursor: pointer;
+        text-decoration: none;
+        line-height: 1.2;
+        transition: background-color 0.2s ease;
+      }
+
+      .toolbar-btn:hover {
+        background: var(--paper);
+      }
+
+      .toolbar-btn--primary {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: #fff;
+      }
+
+      .toolbar-btn--primary:hover {
+        background: var(--ink-soft);
+        border-color: var(--ink-soft);
+      }
+
+      .toolbar button {
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--ink);
+        font: inherit;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        padding: 0.55rem 1.15rem;
+        border-radius: 0.35rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+
+      .toolbar button:hover {
+        background: var(--paper);
+      }
+
+      .toolbar-hint {
+        margin: 0;
+        font-size: 0.6875rem;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      /* ─── Documento ─── */
+      #cv-export {
+        max-width: 210mm;
+        margin: 1.25rem auto 2rem;
+        padding: 14mm 16mm;
+        background: var(--paper);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+      }
+
+      /* ─── Header ─── */
+      .cv-header {
+        margin-bottom: 1.35rem;
+        padding-bottom: 1.1rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .cv-name {
+        margin: 0 0 0.35rem;
+        font-size: 26pt;
+        font-weight: 700;
+        letter-spacing: -0.035em;
+        line-height: 1.05;
+        color: var(--ink);
+      }
+
+      .cv-headline {
+        margin: 0 0 0.65rem;
+        font-size: 10.5pt;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        color: var(--ink-soft);
+      }
+
+      .cv-contact {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.15rem 0;
+        margin: 0;
+        font-size: 9.25pt;
+        color: var(--muted);
+      }
+
+      .cv-contact a {
+        color: var(--ink-soft);
+        text-decoration: none;
+      }
+
+      .cv-contact a:hover {
+        color: var(--ink);
+      }
+
+      .cv-contact .sep {
+        margin: 0 0.45rem;
+        color: var(--line);
+        user-select: none;
+      }
+
+      /* ─── Summary ─── */
+      .cv-summary {
+        margin: 0 0 1.5rem;
+        font-size: 10pt;
+        line-height: 1.55;
+        color: var(--ink-soft);
+        max-width: 52em;
+      }
+
+      /* ─── Sections ─── */
+      .cv-section {
+        margin-bottom: 1.35rem;
+      }
+
+      .cv-section:last-child {
+        margin-bottom: 0;
+      }
+
+      .cv-label {
+        margin: 0 0 0.65rem;
+        font-size: 7.5pt;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      /* ─── Experience ─── */
+      .cv-entry-head {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0.25rem 1rem;
+        margin-bottom: 0.15rem;
+      }
+
+      .cv-entry-title {
+        font-size: 10.5pt;
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+      }
+
+      .cv-entry-date {
+        font-size: 9pt;
+        font-weight: 500;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .cv-entry-context {
+        margin: 0 0 0.5rem;
+        font-size: 9.25pt;
+        color: var(--muted);
+      }
+
+      .cv-bullets {
+        margin: 0;
+        padding-left: 1rem;
+      }
+
+      .cv-bullets li {
+        margin-bottom: 0.28rem;
+        font-size: 10pt;
+        line-height: 1.5;
+        color: var(--ink-soft);
+      }
+
+      .cv-bullets li:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ─── Projects ─── */
+      .cv-project {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .cv-project:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .cv-project-top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.35rem 0.75rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .cv-project-name {
+        font-size: 10.5pt;
+        font-weight: 600;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+      }
+
+      .cv-status {
+        display: inline-block;
+        font-size: 7pt;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.15rem 0.45rem;
+        border-radius: 0.2rem;
+      }
+
+      .cv-status--production {
+        color: var(--production);
+        background: var(--production-bg);
+      }
+
+      .cv-status--demo {
+        color: var(--demo);
+        background: var(--demo-bg);
+      }
+
+      .cv-status--testing {
+        color: var(--testing);
+        background: var(--testing-bg);
+      }
+
+      .cv-project-url {
+        margin: 0 0 0.25rem;
+        font-size: 9pt;
+      }
+
+      .cv-project-url a {
+        color: var(--ink-soft);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .cv-project-stack {
+        margin: 0 0 0.35rem;
+        font-size: 8.75pt;
+        font-weight: 500;
+        color: var(--muted);
+        letter-spacing: 0.01em;
+      }
+
+      .cv-project-desc {
+        margin: 0;
+        font-size: 9.75pt;
+        line-height: 1.5;
+        color: var(--ink-soft);
+      }
+
+      .cv-projects-more {
+        margin: 1rem 0 0;
+        padding-top: 0.85rem;
+        border-top: 1px solid var(--line);
+        font-size: 9pt;
+        color: var(--muted);
+      }
+
+      .cv-projects-more a {
+        color: var(--ink-soft);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      /* ─── Education ─── */
+      .cv-edu-line {
+        font-size: 10pt;
+        color: var(--ink-soft);
+      }
+
+      .cv-edu-line strong {
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      /* ─── Stack ─── */
+      .cv-stack-group {
+        margin-bottom: 0.35rem;
+        font-size: 9.75pt;
+        line-height: 1.5;
+        color: var(--ink-soft);
+      }
+
+      .cv-stack-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .cv-stack-group strong {
+        font-weight: 600;
+        color: var(--ink);
+        font-size: 9pt;
+      }
+
+      /* ─── Footer ─── */
+      .cv-footer {
+        margin-top: 1.25rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid var(--line);
+        font-size: 9pt;
+        color: var(--muted);
+      }
+
+      @media print {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          background: #f9f6f1 !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .toolbar {
+          display: none !important;
+        }
+
+        #cv-export {
+          margin: 0;
+          padding: 14mm 16mm;
+          box-shadow: none;
+          max-width: none;
+          background: #f9f6f1;
+        }
+
+        .cv-contact a,
+        .cv-project-url a,
+        .cv-projects-more a {
+          color: var(--ink-soft);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- CONTACTO — actualiza antes de enviar -->
+    <div class="toolbar">
+      <div class="toolbar-inner">
+        <div class="toolbar-actions">
+          <a
+            id="download-link"
+            class="toolbar-btn toolbar-btn--primary"
+            href="Antonio-Orgaz-Ramon-CV.pdf"
+            download="Antonio-Orgaz-Ramon-CV.pdf"
+          >
+            Descargar PDF
+          </a>
+          <button type="button" class="toolbar-btn" onclick="savePdf()">
+            Imprimir
+          </button>
+        </div>
+        <p id="toolbar-status" class="toolbar-hint">
+          PDF ATS-safe · texto seleccionable · sin encabezado del navegador.
+        </p>
+      </div>
+    </div>
+
+    <div id="cv-export">
+      <header class="cv-header">
+        <h1 class="cv-name">Antonio Orgaz Ramón</h1>
+        <p class="cv-headline">Backend Developer · TypeScript · Node.js</p>
+        <p class="cv-contact">
+          <span>Valencia, Spain</span>
+          <span class="sep">·</span>
+          <a href="mailto:panchutet@gmail.com">panchutet@gmail.com</a>
+          <span class="sep">·</span>
+          <a href="https://portfolio.nakedcode.es">portfolio.nakedcode.es</a>
+        </p>
+      </header>
+
+      <p class="cv-summary">
+        Desarrollador backend junior. Construyo APIs y lógica de negocio con Node.js, Express, Prisma y
+        MySQL.
+        <br />
+        SaaS en producción (restauración) y plataforma multi-tenant en desarrollo para agencia de viajes.
+      </p>
+
+      <section class="cv-section">
+        <h2 class="cv-label">Experiencia</h2>
+        <div class="cv-entry-head">
+          <div class="cv-entry-title">Backend Developer — Prácticas Desarrollo SaaS</div>
+          <div class="cv-entry-date">Actualmente</div>
+        </div>
+        <p class="cv-entry-context">Software SaaS · agencia de viajes · Valencia</p>
+        <ul class="cv-bullets">
+          <li>APIs REST (Node/TS) para flujo comercial: leads, propuestas y seguimiento comercial.</li>
+          <li>Pipeline de ingestión PDF → JSON estructurado consultable vía API.</li>
+          <li>JWT, roles y aislamiento multi-tenant con Prisma + MySQL.</li>
+        </ul>
+      </section>
+
+      <section class="cv-section">
+        <h2 class="cv-label">Proyectos seleccionados</h2>
+
+        <article class="cv-project">
+          <div class="cv-project-top">
+            <span class="cv-project-name">La Peatonal · NakedCode</span>
+            <span class="cv-status cv-status--production">En producción</span>
+          </div>
+          <p class="cv-project-url">
+            <a href="https://lapeatonal.nakedcode.es">lapeatonal.nakedcode.es</a>
+          </p>
+          <p class="cv-project-stack">TypeScript · Node.js · Angular · MySQL</p>
+          <p class="cv-project-desc">
+            Reservas, carta digital y canal web del restaurante. Analytics propio desde cero — equivalente a
+            Google Analytics con tracking exhaustivo de navegación, interacciones y conversión. Sistema SaaS
+            multilocal que centraliza métricas de varios establecimientos.
+          </p>
+        </article>
+
+        <article class="cv-project">
+          <div class="cv-project-top">
+            <span class="cv-project-name">Travel SaaS · Atlas</span>
+            <span class="cv-status cv-status--testing">En testing</span>
+          </div>
+          <p class="cv-project-url">
+            <a href="https://portfolio.nakedcode.es/#proyecto-atlas">portfolio.nakedcode.es</a>
+          </p>
+          <p class="cv-project-stack">TypeScript · Node.js · Express · React · Prisma · MySQL</p>
+          <p class="cv-project-desc">
+            SaaS multi-tenant: ingestión de catálogos PDF y motor de recomendación determinista para
+            propuestas comerciales. En fase de pruebas de rendimiento, carga e integración.
+          </p>
+        </article>
+
+        <p class="cv-projects-more">
+          Más proyectos y detalle técnico en
+          <a href="https://portfolio.nakedcode.es">portfolio.nakedcode.es</a>
+        </p>
+      </section>
+
+      <section class="cv-section">
+        <h2 class="cv-label">Formación</h2>
+        <p class="cv-edu-line">
+          <strong>DAW</strong> — Desarrollo de Aplicaciones Web · 2024 – 2026 · Valencia
+        </p>
+      </section>
+
+      <section class="cv-section">
+        <h2 class="cv-label">Stack</h2>
+        <p class="cv-stack-group">
+          <strong>Backend</strong>
+          TypeScript, Node.js, Express, Prisma, MySQL, REST APIs, JWT
+        </p>
+        <p class="cv-stack-group"><strong>Herramientas</strong> Git, Docker, Postman</p>
+        <p class="cv-stack-group"><strong>Frontend (complementario)</strong> Angular</p>
+      </section>
+
+      <footer class="cv-footer">Español (nativo) · Inglés (B1)</footer>
+    </div>
+
+    <script>
+      (function initDownloadLink() {
+        const link = document.getElementById('download-link');
+        const status = document.getElementById('toolbar-status');
+        if (!link) return;
+
+        const pdfName = 'Antonio-Orgaz-Ramon-CV.pdf';
+        const pdfUrl = new URL(pdfName, window.location.href).href;
+
+        link.href = pdfUrl;
+        link.setAttribute('download', pdfName);
+
+        if (window.location.protocol === 'file:') {
+          link.removeAttribute('download');
+          status.textContent =
+            'Abriendo el PDF en el navegador. Para descarga directa, usa http://localhost:5173/cv/antonio-orgaz-ramon-cv.html';
+        }
+      })();
+
+      function savePdf() {
+        const ok = window.confirm(
+          'Imprimir / guardar PDF:\n\n' +
+            '1. Desactiva «Encabezados y pies de página»\n' +
+            '2. Destino: Guardar como PDF\n\n' +
+            '¿Continuar?',
+        );
+        if (ok) window.print();
+      }
+    </script>
+  </body>
+</html>

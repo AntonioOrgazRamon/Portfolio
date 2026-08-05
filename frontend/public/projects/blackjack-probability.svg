@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#141416"/>
+  <rect x="48" y="56" width="704" height="40" rx="8" fill="#27272a"/>
+  <rect x="48" y="120" width="340" height="400" rx="12" fill="#1f1f23"/>
+  <rect x="412" y="120" width="340" height="400" rx="12" fill="#27272a"/>
+  <rect x="72" y="148" width="80" height="48" rx="6" fill="#3f3f46"/>
+  <rect x="168" y="148" width="80" height="48" rx="6" fill="#52525b"/>
+  <rect x="264" y="148" width="80" height="48" rx="6" fill="#27272a"/>
+  <rect x="436" y="180" width="292" height="16" rx="4" fill="#3f3f46"/>
+  <rect x="436" y="220" width="240" height="16" rx="4" fill="#27272a"/>
+  <rect x="436" y="260" width="260" height="16" rx="4" fill="#27272a"/>
+  <rect x="436" y="340" width="120" height="120" rx="60" fill="#1f1f23"/>
+  <text x="400" y="580" text-anchor="middle" fill="#52525b" font-family="system-ui,sans-serif" font-size="14">Probabilidades · Blackjack</text>
+</svg>

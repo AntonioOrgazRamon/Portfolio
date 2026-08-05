@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#0a0a0e"/>
+  <rect x="48" y="48" width="704" height="504" rx="12" fill="#101014" stroke="#1e293b"/>
+  <rect x="88" y="100" width="120" height="80" rx="8" fill="#14141a" stroke="#38bdf8" stroke-opacity="0.5"/>
+  <text x="148" y="145" text-anchor="middle" fill="#38bdf8" font-family="monospace" font-size="11">API</text>
+  <rect x="280" y="100" width="120" height="80" rx="8" fill="#14141a" stroke="#1e293b"/>
+  <text x="340" y="145" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="11">CRM</text>
+  <rect x="472" y="100" width="120" height="80" rx="8" fill="#14141a" stroke="#1e293b"/>
+  <rect x="664" y="100" width="48" height="80" rx="8" fill="#14141a" stroke="#1e293b"/>
+  <line x1="208" y1="140" x2="280" y2="140" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <line x1="400" y1="140" x2="472" y2="140" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <line x1="592" y1="140" x2="664" y2="140" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <rect x="88" y="240" width="624" height="260" rx="8" fill="#0c0c10" stroke="#1e293b"/>
+  <rect x="120" y="280" width="560" height="12" rx="3" fill="#27272f"/>
+  <rect x="120" y="310" width="480" height="12" rx="3" fill="#1e293b"/>
+  <rect x="120" y="340" width="520" height="12" rx="3" fill="#1e293b"/>
+  <rect x="120" y="400" width="80" height="60" rx="4" fill="#38bdf8" opacity="0.5"/>
+  <rect x="220" y="420" width="80" height="40" rx="4" fill="#38bdf8" opacity="0.35"/>
+  <rect x="320" y="390" width="80" height="70" rx="4" fill="#38bdf8" opacity="0.65"/>
+</svg>

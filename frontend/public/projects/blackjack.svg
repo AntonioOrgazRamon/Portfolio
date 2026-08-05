@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#0f0f11"/>
+  <rect x="120" y="80" width="560" height="360" rx="12" fill="#18181b" stroke="#27272a"/>
+  <text x="400" y="180" text-anchor="middle" fill="#71717a" font-family="ui-monospace,monospace" font-size="18">probability_engine</text>
+  <text x="400" y="220" text-anchor="middle" fill="#52525b" font-family="ui-monospace,monospace" font-size="13">deck: 52 | visible: 3 | count: +2</text>
+  <rect x="200" y="260" width="80" height="112" rx="8" fill="#27272a" stroke="#3f3f46"/>
+  <rect x="300" y="260" width="80" height="112" rx="8" fill="#27272a" stroke="#3f3f46"/>
+  <rect x="400" y="260" width="80" height="112" rx="8" fill="#3f3f46"/>
+  <rect x="500" y="260" width="80" height="112" rx="8" fill="#27272a" stroke="#3f3f46"/>
+  <text x="400" y="420" text-anchor="middle" fill="#a1a1aa" font-family="ui-monospace,monospace" font-size="14">hit: 62.4%  stand: 37.6%</text>
+  <text x="400" y="580" text-anchor="middle" fill="#52525b" font-family="system-ui,sans-serif" font-size="14">Blackjack Probability Engine</text>
+</svg>

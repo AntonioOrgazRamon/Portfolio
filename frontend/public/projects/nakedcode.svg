@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#141416"/>
+  <rect x="48" y="56" width="704" height="488" rx="16" fill="#1a1a1e"/>
+  <rect x="80" y="96" width="280" height="160" rx="10" fill="#27272a"/>
+  <rect x="384" y="96" width="336" height="72" rx="8" fill="#27272a"/>
+  <rect x="384" y="184" width="336" height="72" rx="8" fill="#1f1f23"/>
+  <rect x="80" y="280" width="640" height="8" rx="2" fill="#3f3f46"/>
+  <rect x="80" y="304" width="480" height="8" rx="2" fill="#27272a"/>
+  <rect x="80" y="328" width="520" height="8" rx="2" fill="#27272a"/>
+  <circle cx="120" cy="420" r="24" fill="#3f3f46"/>
+  <circle cx="200" cy="420" r="24" fill="#3f3f46"/>
+  <circle cx="280" cy="420" r="24" fill="#52525b"/>
+  <text x="400" y="580" text-anchor="middle" fill="#52525b" font-family="system-ui,sans-serif" font-size="14">NakedCode Systems</text>
+</svg>

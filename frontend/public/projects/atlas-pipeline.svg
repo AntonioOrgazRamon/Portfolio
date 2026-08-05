@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#141416"/>
+  <rect x="56" y="64" width="688" height="48" rx="10" fill="#27272a"/>
+  <rect x="56" y="140" width="320" height="380" rx="12" fill="#1f1f23"/>
+  <rect x="396" y="140" width="348" height="180" rx="12" fill="#27272a"/>
+  <rect x="396" y="340" width="348" height="180" rx="12" fill="#1f1f23"/>
+  <rect x="80" y="168" width="272" height="12" rx="4" fill="#3f3f46"/>
+  <rect x="80" y="196" width="240" height="12" rx="4" fill="#27272a"/>
+  <rect x="80" y="224" width="256" height="12" rx="4" fill="#27272a"/>
+  <rect x="80" y="280" width="272" height="180" rx="8" fill="#27272a"/>
+  <text x="400" y="580" text-anchor="middle" fill="#52525b" font-family="system-ui,sans-serif" font-size="14">Pipeline PDF/JSON - Atlas</text>
+</svg>

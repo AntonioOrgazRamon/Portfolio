@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#141416"/>
+  <rect x="40" y="56" width="720" height="36" rx="8" fill="#27272a"/>
+  <rect x="40" y="120" width="220" height="400" rx="12" fill="#1f1f23"/>
+  <rect x="280" y="120" width="480" height="180" rx="12" fill="#27272a"/>
+  <rect x="280" y="320" width="230" height="200" rx="12" fill="#1f1f23"/>
+  <rect x="530" y="320" width="230" height="200" rx="12" fill="#27272a"/>
+  <polyline points="300,260 340,220 380,240 420,180 460,200 500,160 540,190 580,140 620,170 660,120" stroke="#71717a" stroke-width="3" fill="none"/>
+  <text x="400" y="580" text-anchor="middle" fill="#52525b" font-family="system-ui,sans-serif" font-size="14">Analítica · NakedCode</text>
+</svg>

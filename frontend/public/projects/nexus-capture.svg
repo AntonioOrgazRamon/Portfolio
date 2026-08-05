@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#141416"/>
+  <rect x="120" y="80" width="560" height="440" rx="16" fill="#1f1f23"/>
+  <rect x="160" y="120" width="480" height="36" rx="8" fill="#27272a"/>
+  <rect x="160" y="180" width="480" height="48" rx="8" fill="#27272a"/>
+  <rect x="160" y="248" width="480" height="48" rx="8" fill="#27272a"/>
+  <rect x="160" y="316" width="480" height="48" rx="8" fill="#27272a"/>
+  <rect x="160" y="420" width="200" height="48" rx="24" fill="#52525b"/>
+  <text x="400" y="580" text-anchor="middle" fill="#52525b" font-family="system-ui,sans-serif" font-size="14">Captación · Nexus</text>
+</svg>

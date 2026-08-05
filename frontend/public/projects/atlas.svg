@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#141416"/>
+  <rect x="40" y="48" width="720" height="40" rx="8" fill="#27272a"/>
+  <rect x="40" y="120" width="340" height="200" rx="12" fill="#1f1f23"/>
+  <rect x="404" y="120" width="356" height="200" rx="12" fill="#1f1f23"/>
+  <rect x="40" y="344" width="720" height="12" rx="4" fill="#3f3f46"/>
+  <rect x="40" y="372" width="520" height="12" rx="4" fill="#27272a"/>
+  <rect x="40" y="400" width="480" height="12" rx="4" fill="#27272a"/>
+  <rect x="40" y="460" width="200" height="80" rx="10" fill="#27272a"/>
+  <rect x="260" y="460" width="200" height="80" rx="10" fill="#27272a"/>
+  <rect x="480" y="460" width="280" height="80" rx="10" fill="#27272a"/>
+  <text x="400" y="580" text-anchor="middle" fill="#52525b" font-family="system-ui,sans-serif" font-size="14">Atlas Travel CRM</text>
+</svg>

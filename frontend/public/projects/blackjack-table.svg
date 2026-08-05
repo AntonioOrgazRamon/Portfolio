@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#141416"/>
+  <rect x="80" y="120" width="640" height="360" rx="20" fill="#1f1f23"/>
+  <rect x="120" y="160" width="120" height="160" rx="12" fill="#27272a"/>
+  <rect x="260" y="160" width="120" height="160" rx="12" fill="#3f3f46"/>
+  <rect x="400" y="160" width="120" height="160" rx="12" fill="#27272a"/>
+  <rect x="540" y="160" width="120" height="160" rx="12" fill="#27272a"/>
+  <rect x="280" y="360" width="240" height="80" rx="12" fill="#52525b"/>
+  <text x="400" y="580" text-anchor="middle" fill="#52525b" font-family="system-ui,sans-serif" font-size="14">Mesa · Blackjack</text>
+</svg>

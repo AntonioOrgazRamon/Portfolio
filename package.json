@@ -1,0 +1,8 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "scripts": {
+    "build": "npm run build --prefix frontend",
+    "deploy:prepare": "node scripts/prepare-hostinger.mjs"
+  }
+}

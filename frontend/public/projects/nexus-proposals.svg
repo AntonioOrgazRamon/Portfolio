@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#141416"/>
+  <rect x="56" y="64" width="688" height="40" rx="8" fill="#27272a"/>
+  <rect x="56" y="128" width="688" height="420" rx="12" fill="#1f1f23"/>
+  <rect x="88" y="160" width="624" height="48" rx="8" fill="#27272a"/>
+  <rect x="88" y="228" width="624" height="12" rx="4" fill="#3f3f46"/>
+  <rect x="88" y="256" width="580" height="12" rx="4" fill="#27272a"/>
+  <rect x="88" y="284" width="600" height="12" rx="4" fill="#27272a"/>
+  <rect x="88" y="340" width="280" height="160" rx="8" fill="#27272a"/>
+  <rect x="432" y="340" width="280" height="160" rx="8" fill="#3f3f46"/>
+  <text x="400" y="580" text-anchor="middle" fill="#52525b" font-family="system-ui,sans-serif" font-size="14">Propuestas PDF · Nexus</text>
+</svg>

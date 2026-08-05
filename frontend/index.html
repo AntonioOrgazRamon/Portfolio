@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Antonio Orgaz Ramón — Fullstack Developer con foco en backend, APIs REST, SaaS, Prisma/MySQL y automatización."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Antonio Orgaz Ramón — Fullstack Developer" />
+    <meta
+      property="og:description"
+      content="Backend, APIs, SaaS y automatización. Proyectos con TypeScript, Node.js, Express, React y Prisma."
+    />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Antonio Orgaz Ramón — Fullstack Developer (Backend)</title>
+    <script>
+      (function () {
+        var theme = localStorage.getItem('portfolio-theme');
+        document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+        var locale = localStorage.getItem('portfolio-locale');
+        document.documentElement.lang = locale === 'en' ? 'en' : 'es';
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

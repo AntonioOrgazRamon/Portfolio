@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 export function useTouchDevice() {
-  const [isTouch, setIsTouch] = useState(false);
-  const [isCompact, setIsCompact] = useState(false);
+  const [isTouch, setIsTouch] = useState(() => window.matchMedia('(pointer: coarse)').matches);
+  const [isCompact, setIsCompact] = useState(() => window.matchMedia('(max-width: 1023px)').matches);
 
   useEffect(() => {
     const touchMq = window.matchMedia('(pointer: coarse)');
@@ -13,7 +13,6 @@ export function useTouchDevice() {
       setIsCompact(compactMq.matches);
     };
 
-    sync();
     touchMq.addEventListener('change', sync);
     compactMq.addEventListener('change', sync);
     return () => {

@@ -70,10 +70,11 @@ export function usePageMotion(rootRef: RefObject<HTMLElement | null>, deps: unkn
       if (heroItems.length) {
         gsap.fromTo(
           heroItems,
-          { opacity: 0, y: compact ? 16 : 28, force3D: true },
+          { opacity: 0, y: compact ? 16 : 28, '--read-p': 0, force3D: true },
           {
             opacity: 1,
             y: 0,
+            '--read-p': 1,
             duration: compact ? 0.55 : 0.72,
             stagger: 0.08,
             ease: 'power3.out',
@@ -81,7 +82,6 @@ export function usePageMotion(rootRef: RefObject<HTMLElement | null>, deps: unkn
             force3D: true,
             onComplete: () => {
               root.querySelectorAll<HTMLElement>('#inicio [data-read-text]').forEach((block) => {
-                block.style.setProperty('--read-p', '1');
                 block.classList.add('is-read-complete');
               });
             },
@@ -160,6 +160,8 @@ export function usePageMotion(rootRef: RefObject<HTMLElement | null>, deps: unkn
         setupReadOnScroll(root);
       } else {
         root.querySelectorAll<HTMLElement>('[data-read-text]').forEach((block) => {
+          if (block.closest('#inicio')) return;
+
           gsap.fromTo(
             block,
             { opacity: 0.4, y: 8, force3D: true },

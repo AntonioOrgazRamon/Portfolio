@@ -304,6 +304,29 @@ h1, h2, h3, h4 {
   }
 }
 
+/*
+ * Entrance-animated elements are hidden by GSAP at runtime (usePageMotion),
+ * not by CSS. That leaves a gap between first paint and the effect running
+ * where the whole page renders fully visible, then gets yanked hidden and
+ * re-revealed — a visible flash/jank on load. Hiding them here by default
+ * closes that gap; GSAP's fromTo takes over from this same opacity: 0.
+ */
+[data-hero-item],
+[data-reveal],
+[data-reveal-item],
+[data-project-part] {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hero-item],
+  [data-reveal],
+  [data-reveal-item],
+  [data-project-part] {
+    opacity: 1;
+  }
+}
+
 .label-mono {
   font-family: var(--font-body);
   font-size: 0.6875rem;
@@ -712,6 +735,17 @@ h1, h2, h3, h4 {
 }
 
 /* Floating sidebar dock */
+@keyframes sidebar-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
 .sidebar {
   position: fixed;
   left: 1.25rem;
@@ -727,6 +761,13 @@ h1, h2, h3, h4 {
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.03) inset,
     0 16px 40px -20px rgba(0, 0, 0, 0.55);
+  animation: sidebar-enter 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar {
+    animation: none;
+  }
 }
 
 [data-theme='light'] .sidebar {

@@ -10,7 +10,7 @@ const isCompactViewport = () => window.matchMedia('(max-width: 1023px)').matches
 function markReadComplete(root: HTMLElement) {
   root.querySelectorAll<HTMLElement>('[data-read-text]').forEach((block) => {
     block.style.setProperty('--read-p', '1');
-    block.classList.add('is-read-complete', 'is-bold');
+    block.classList.add('is-read-complete');
   });
 }
 
@@ -82,7 +82,7 @@ export function usePageMotion(rootRef: RefObject<HTMLElement | null>, deps: unkn
             onComplete: () => {
               root.querySelectorAll<HTMLElement>('#inicio [data-read-text]').forEach((block) => {
                 block.style.setProperty('--read-p', '1');
-                block.classList.add('is-read-complete', 'is-bold');
+                block.classList.add('is-read-complete');
               });
             },
           },
